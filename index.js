@@ -4,6 +4,13 @@ const express = require('express')
 //Definindo chamada do Express pela const "app"
 const app = express()
 
+//Definindo Biblioteca para assimilação de mensagens 
+const bodyParser = require('body-parser')
+
+//Definindo chamada para o Body-Parser dentro da const 'app'
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
 //Chamada da porta 3000 para subir servidor
 app.listen(3000, () => console.log('Servidor Operando com Sucesso'))
 
@@ -14,5 +21,6 @@ app.get('/api/v1/user', (req, res) => {
 
 //Enviar Dados ao Servidor usando método POST
 app.post('/api/v1/user', (req, res) => {
-    res.send('Você está na rota de cadastro')
+    console.log(req.body)
+    res.send('Você está na rota de cadastro atráves do método POST')
 })
