@@ -1,0 +1,19 @@
+{
+  "name": "desafiosprint2",
+  "version": "1.0.0",
+  "description": "Criar uma aplicação API REST FULL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuiVLoureiro/DesafioSprint2.git"
+  },
+  "author": "Lui Loureiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuiVLoureiro/DesafioSprint2/issues"
+  },
+  "homepage": "https://github.com/LuiVLoureiro/DesafioSprint2#readme"
+}
