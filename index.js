@@ -36,14 +36,15 @@ connection.connect(error => {
         //Enviar Mensagem usando método GET
         app.get('/api/v1/user', (req, res) => {
             res.send('Você está na rota de cadastro')
+            console.log(cadastro)
         })
 
         //Enviar Dados ao Servidor usando método POST
         app.post('/api/v1/user', (req, res) => {
             const cadastro = req.body
 
-            Cadastro.adiciona(cadastro)
-            res.send('Você está na rota de cadastro atráves do método POST')
+            Cadastro.adiciona(cadastro, res)
+                //res.send('Você está na rota de cadastro atráves do método POST')
         })
     }
 })

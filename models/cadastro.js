@@ -3,14 +3,14 @@ const connection = require('../database/database')
 
 //Criando class cadastro para manipulação de dados oriundos do server
 class Cadastro {
-    adiciona(cadastro) {
+    adiciona(cadastro, res) {
         const sql = 'INSERT INTO cadastro SET ?'
 
         connection.query(sql, cadastro, (erro, results) => {
             if (erro) {
-                console.log(erro)
+                res.status(400).json(erro)
             } else {
-                console.log(results)
+                res.status(201).json(results)
             }
         })
     }
