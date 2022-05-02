@@ -10,8 +10,11 @@ const bodyParser = require('body-parser')
 //Definindo exportação do módulo de database para a linha de comandos principal
 const connection = require('./database/database')
 
-//
+//Definindo constante de Tabelas
 const tables = require('./database/tables')
+
+//Definindo 
+const Cadastro = require('./models/cadastro')
 
 //Chamada para a conexão ao banco de dados
 connection.connect(error => {
@@ -37,7 +40,9 @@ connection.connect(error => {
 
         //Enviar Dados ao Servidor usando método POST
         app.post('/api/v1/user', (req, res) => {
-            console.log(req.body)
+            const cadastro = req.body
+
+            Cadastro.adiciona(cadastro)
             res.send('Você está na rota de cadastro atráves do método POST')
         })
     }
