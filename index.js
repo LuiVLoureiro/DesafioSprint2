@@ -10,12 +10,17 @@ const bodyParser = require('body-parser')
 //Definindo exportação do módulo de database para a linha de comandos principal
 const connection = require('./database/database')
 
+//
+const tables = require('./database/tables')
+
 //Chamada para a conexão ao banco de dados
 connection.connect(error => {
     if (error) {
         console.log(error)
     } else {
         console.log('Conectado ao Banco de Dados com Sucesso')
+
+        tables.init(connection)
 
         //Definindo chamada para o Body-Parser dentro da const 'app'
         app.use(bodyParser.json())
